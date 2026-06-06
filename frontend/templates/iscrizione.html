@@ -239,12 +239,33 @@
     </footer>
 
     <script>
-        const form = document.getElementById("iscrizioneForm");
-        const status = document.getElementById("form-status");
-        const corsiData = JSON.parse('{{ corsi | tojson | safe }}');
+        const form = document.getElementById('iscrizioneForm');
+            const statusDiv = document.getElementById('form-status');
 
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Blocca il caricamento della pagina
+                
+                statusDiv.innerText = "Invio in corso, attendi...";
+                
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                method: 'POST',
+                body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                if(data.result === 'success') {
+                    statusDiv.innerText = "Iscrizione avvenuta con successo!";
+                    form.reset(); // Pulisce il form
+                } else {
+                    statusDiv.innerText = "Errore: " + data.error;
+                }
+                })
+                .catch(error => {
+                statusDiv.innerText = "Errore di connessione: " + error;
+                });
+            });
             status.innerHTML = "Invio in corso...";
             
             const formData = new FormData(form);
@@ -259,7 +280,6 @@
             }).catch(error => {
                 status.innerHTML = "Si è verificato un errore. Assicurati che l'URL nel form sia corretto.";
             });
-        });
 
             const corsoSelect = document.getElementById("corsoSelect");
             const settimanaSelect = document.getElementById("settimanaSelect");
