@@ -1,7 +1,6 @@
 from flask import Blueprint, request, abort 
 import subprocess
 import os
-import json
 
 webhook_bp = Blueprint("webhook_bp", __name__)
 

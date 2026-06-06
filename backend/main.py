@@ -4,18 +4,15 @@ from flask_sock import Sock
 import os 
 import json
 from routes.auth import auth_bp
-
+from routes.webhook import webhook_bp
+from json_reader import config_host_key
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
 sock = Sock(app)
-with open("config.json") as f:
-    config = json.load(f)
-    config_host_key = config.get("host_key")
-    config_password = config.get("password")
-
 
 CORS(app, resources={r"/api/*"})
 app.register_blueprint(auth_bp)
+app.register_blueprint(webhook_bp)
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SECURE'] = False  # assicurati che sia False per HTTP
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  # oppure 'None' se stai usando domini tipo .ts.net
