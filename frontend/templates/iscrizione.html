@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="form-pane">
-                    <form id="iscrizioneForm" action="https://script.google.com/macros/s/AKfycbz9HaYaxJAylrTUaTbrRWFXK4GBL29RpK4JFaQ2s_OaxIcE6JPTIWkmpJjglpkGXM7N/exec" method="POST">
+                    <form id="iscrizioneForm" action="https://script.google.com/macros/s/AKfycbzSMX4U5KX2cgA_nYmsIzCIdjM49jaPbakwhOzq9UKEGZIFV6ywPUnPz7XWD-PvNHsv/exec" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Nome Allievo</label>
@@ -244,22 +244,35 @@
         const corsiData = JSON.parse('{{ corsi | tojson | safe }}');
 
         form.addEventListener("submit", function(event) {
-            event.preventDefault();
-            status.innerHTML = "Invio in corso...";
-            
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors' 
-            }).then(() => {
-                status.innerHTML = "Grazie! La tua richiesta è stata inviata correttamente.";
-                form.reset();
-            }).catch(error => {
-                status.innerHTML = "Si è verificato un errore. Assicurati che l'URL nel form sia corretto.";
-            });
+        event.preventDefault();
+        status.innerHTML = "Invio in corso...";
+        
+        // Converte i dati del form in un oggetto standard
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
         });
+        
+        // Inviamo i dati come testo JSON a Google Apps Script
+        fetch(form.action, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'text/plain' // Evita problemi di CORS pre-flight con Apps Script
+            }
+        })
+        .then(response => {
+            status.innerHTML = "Grazie! La tua richiesta è stata inviata correttamente.";
+            form.reset();
+            tutoreSection.style.display = "none"; // Reset della sezione dinamica
+        })
+        .catch(error => {
+            status.innerHTML = "Si è verificato un errore durante l'invio. Riprova.";
+            console.error(error);
+        });
+    });
+
 
             const corsoSelect = document.getElementById("corsoSelect");
             const settimanaSelect = document.getElementById("settimanaSelect");
