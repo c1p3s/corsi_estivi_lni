@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iscrizione - Scuola Vela LNI Matera Magna Grecia</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="immagini/logo.png" alt="Logo LNI" class="nav-logo-img">
+            <a href="{{ url_for('index') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo LNI" class="nav-logo-img">
                 LNI Matera Magna Grecia
             </a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="orari.html">Date & Orari</a>
-                <a href="iscrizione.html" class="active">Iscrizione</a>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('orari') }}">Date & Orari</a>
+                <a href="{{ url_for('iscrizione') }}" class="active">Iscrizione</a>
             </div>
         </div>
     </nav>
@@ -127,6 +128,25 @@
             </div>
         </div>
     </main>
+
+    <footer id="footer-sezione">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contatti & Iscrizioni</h4>
+                <p>📧 <a href="mailto:matera@leganavale.it" class="mobile-link">Invia una Email</a></p>
+                <p>📞 <a href="tel:+393515810370" class="mobile-link">Chiama in Sezione</a></p>
+                <p>📍 Base: Riva dei Tessali - Borgo Pineto</p>
+            </div>
+            <div class="footer-section">
+                <h4>Seguici sui Social</h4>
+                <p>📸 <a href="https://instagram.com/lni_matera_magnagrecia" target="_blank" class="mobile-link">Instagram (@lni_matera_magnagrecia)</a></p>
+                <p>👥 <a href="https://www.facebook.com/LegaNavaleItalianaSezioneMateraMagnaGrecia" target="_blank" class="mobile-link">Facebook (@Lega Navale Italiana Sezione Matera-MagnaGrecia)</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lega Navale Italiana - Matera Magna Grecia. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
 
     <script>
         const form = document.getElementById("iscrizioneForm");

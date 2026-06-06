@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Date e Orari - Scuola Vela LNI Matera Magna Grecia</title>
    
-    <link rel="icon" type="image/x-icon" href="./immagini/logo.png">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <style>
         /* ==========================================================================
@@ -147,21 +147,21 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="immagini/logo.png" alt="Logo LNI" class="nav-logo-img">
+            <a href="{{ url_for('index') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo LNI" class="nav-logo-img">
                 LNI Matera Magna Grecia
             </a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="orari.html" class="active">Date & Orari</a>
-                <a href="iscrizione.html">Iscrizione</a>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('orari') }}" class="active">Date & Orari</a>
+                <a href="{{ url_for('iscrizione') }}">Iscrizione</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-header">
         <div class="header-main-container">
-            <img src="immagini/logo.png" alt="Logo Lega Navale" class="header-logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Lega Navale" class="header-logo">
             
             <div class="header-content">
                 <h1>Calendario Corsi 2026</h1>
@@ -173,12 +173,12 @@
                 <div class="season-badge">Pianifica l'estate in barca</div>
             </div>
             
-            <img src="immagini/logo_sport.png" alt="Logo Sportivo" class="header-logo">
+            <img src="{{ url_for('static', filename='images/logo_sport.png') }}" alt="Logo Sportivo" class="header-logo">
         </div>
         
         <div class="hero-buttons">
-            <a href="iscrizione.html" class="cta-button">ISCRIVITI ORA</a>
-            <a href="index.html" class="cta-button secondary-btn">TORNA ALLA HOME</a>
+            <a href="{{ url_for('iscrizione') }}" class="cta-button">ISCRIVITI ORA</a>
+            <a href="{{ url_for('index') }}" class="cta-button secondary-btn">TORNA ALLA HOME</a>
         </div>
     </header>
 
@@ -201,7 +201,7 @@
         <div class="timetable-section">
             <div class="timetable-header optimist">
                 <div class="timetable-logo-wrapper">
-                    <img src="immagini/logo_optimist.png" alt="Logo Optimist">
+                    <img src="{{ url_for('static', filename='images/logo_optimist.png') }}" alt="Logo Optimist">
                 </div>
                 <h3>Corsi OPTIMIST (6 - 12 anni)</h3>
             </div>
@@ -244,7 +244,7 @@
         <div class="timetable-section">
             <div class="timetable-header laser">
                 <div class="timetable-logo-wrapper">
-                    <img src="immagini/logo_laser.png" alt="Logo Laser">
+                    <img src="{{ url_for('static', filename='images/logo_laser.png') }}" alt="Logo Laser">
                 </div>
                 <h3>Corsi LASER (12+ anni)</h3>
             </div>
@@ -287,7 +287,7 @@
         <div class="timetable-section">
             <div class="timetable-header hobie">
                 <div class="timetable-logo-wrapper">
-                    <img src="immagini/logo_hobiecat.png" alt="Logo Hobie Cat 16">
+                    <img src="{{ url_for('static', filename='images/logo_hobiecat.png') }}" alt="Logo Hobie Cat 16">
                 </div>
                 <h3>Corsi HOBIE CAT 16 (12+ anni)</h3>
             </div>

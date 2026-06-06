@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Scuola Vela - Lega Navale Italiana Matera Magna Grecia</title>
     
-    <link rel="icon" type="image/x-icon" href="./immagini/logo.png">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="immagini/logo.png" alt="Logo LNI" class="nav-logo-img">
+            <a href="{{ url_for('index') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo LNI" class="nav-logo-img">
                 LNI Matera Magna Grecia
             </a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="orari.html">Date & Orari</a>
-                <a href="iscrizione.html">Iscrizione</a>
+                <a href="{{ url_for('index') }}" class="active">Home</a>
+                <a href="{{ url_for('orari') }}">Date & Orari</a>
+                <a href="{{ url_for('iscrizione') }}">Iscrizione</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-header">
         <div class="header-main-container">
-            <img src="immagini/logo.png" alt="Logo Lega Navale" class="header-logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Lega Navale" class="header-logo">
             
             <div class="header-content">
                 <h1>Scuola Vela 2026</h1>
@@ -39,12 +39,12 @@
                 <div class="season-badge">Corsi Estivi - Luglio e Agosto</div>
             </div>
             
-            <img src="immagini/logo_sport.png" alt="Logo Sportivo" class="header-logo">
+            <img src="{{ url_for('static', filename='images/logo_sport.png') }}" alt="Logo Sportivo" class="header-logo">
         </div>
         
         <div class="hero-buttons">
-            <a href="iscrizione.html" class="cta-button">ISCRIVITI ORA</a>
-            <a href="orari.html" class="cta-button secondary-btn">VEDI ORARI</a>
+            <a href="{{ url_for('iscrizione') }}" class="cta-button">ISCRIVITI ORA</a>
+            <a href="{{ url_for('orari') }}" class="cta-button secondary-btn">VEDI ORARI</a>
         </div>
     </header>
 
@@ -78,7 +78,7 @@
                 <article class="course-card clickable-card" onclick="openModal('optimist')" title="Clicca qui per scoprire l'Optimist">
                     <div class="course-header optimist">
                         <div class="course-icon-wrapper">
-                            <img src="immagini/logo_optimist.png" alt="Logo Optimist" class="course-icon">
+                            <img src="{{ url_for('static', filename='images/logo_optimist.png') }}" alt="Logo Optimist" class="course-icon">
                         </div>
                         <span>OPTIMIST</span>
                     </div>
@@ -89,13 +89,14 @@
                             <li>Tecnica, autonomia e rispetto del mare</li>
                             <li>Attività ludico-sportiva</li>
                         </ul>
+                        <h5 style="text-align: right;">Scopri di più</h5>
                     </div>
                 </article>
 
                 <article class="course-card clickable-card" onclick="openModal('laser')" title="Clicca qui per scoprire il Laser">
                     <div class="course-header laser">
                         <div class="course-icon-wrapper">
-                            <img src="immagini/logo_laser.png" alt="Logo Laser" class="course-icon">
+                            <img src="{{ url_for('static', filename='images/logo_laser.png') }}" alt="Logo Laser" class="course-icon">
                         </div>
                         <span>LASER</span>
                     </div>
@@ -106,13 +107,14 @@
                             <li>Imparare la tecnica e migliorare la conduzione della barca</li>
                             <li>Adatto a tutti i livelli</li>
                         </ul>
+                        <h5 style="text-align: right;">Scopri di più</h5>
                     </div>
                 </article>
 
                 <article class="course-card clickable-card" onclick="openModal('hobiecat')" title="Clicca qui per scoprire l'Hobie Cat">
                     <div class="course-header hobie">
                         <div class="course-icon-wrapper">
-                            <img src="immagini/logo_hobiecat.png" alt="Logo Hobie Cat 16" class="course-icon">
+                            <img src="{{ url_for('static', filename='images/logo_hobiecat.png') }}" alt="Logo Hobie Cat 16" class="course-icon">
                         </div>
                         <span>HOBIE CAT 16</span>
                     </div>
@@ -123,6 +125,7 @@
                             <li>Lavoro di squadra e adrenalina</li>
                             <li>Uscite, corsi e experiences in mare</li>
                         </ul>
+                        <h5>Scopri di più</h5>
                     </div>
                 </article>
 
@@ -134,43 +137,48 @@
         <div class="flex-container-info">
 
 
- <div class="courses-grid"> 
-    <section class="extra-info">
-        <h3>ℹ️ Info Utili per i Partecipanti</h3>
-        
-        <div class="info-block">
-            <h4>Cosa Portare</h4>
-            <ul>
-                <li>Cambio completo di vestiti asciutti</li>
-                <li>Crema solare e cappellino</li>
-                <li>Asciugamano</li>
-            </ul>
-        </div>
+ <div class="flex-container-info">
+            <div class="info-grid"> 
+                
+                <!-- Prima Card: Info Utili -->
+                <article class="extra-info">
+                    <h3>ℹ️ Info Utili per i Partecipanti</h3>
+                    
+                    <div class="info-block">
+                        <h4>Cosa Portare</h4>
+                        <ul>
+                            <li>Cambio completo di vestiti asciutti</li>
+                            <li>Crema solare e cappellino</li>
+                            <li>Asciugamano</li>
+                        </ul>
+                    </div>
 
-        <div class="info-block" style="margin-top: 20px;">
-            <h4>Orari e Logistica</h4>
-            <p>I corsi sono organizzati in moduli settimanali (Lunedì - Venerdì). Puoi consultare il calendario completo nella pagina dedicata <a href="orari.html">Date e Orari</a>.</p>
-        </div>
-    </section>
+                    <div class="info-block" style="margin-top: 20px;">
+                        <h4>Orari e Logistica</h4>
+                        <p>I corsi sono organizzati in moduli settimanali (Lunedì - Venerdì). Puoi consultare il calendario completo nella pagina dedicata <a href="{{ url_for('orari') }}">Date e Orari</a>.</p>
+                    </div>
+                </article>
 
-    <article class="course-card clickable-card enrollment-card" onclick="window.location.href='iscrizione.html'" title="Vai alla pagina di iscrizione">
-        <div class="course-header enrollment">
-            <div class="course-icon-wrapper">
-                <span class="course-icon-emoji">📝</span>
+                <!-- Seconda Card: Iscrizione -->
+                <article class="info-card clickable-card enrollment-card" onclick="window.location.href='/iscrizione'" title="Vai alla pagina di iscrizione">
+                    <div class="course-header enrollment">
+                        <div class="course-icon-wrapper">
+                            <span class="course-icon-emoji">📝</span>
+                        </div>
+                        <span>ISCRIZIONE 2026</span>
+                    </div>
+                    <div class="course-body">
+                        <ul class="checkmark-list">
+                            <li><strong>Requisiti:</strong> Certificato medico-sportivo</li>
+                            <li>Tesseramento FIV e LNI incluso nel corso</li>
+                            <li>Apertura iscrizioni per moduli settimanali</li>
+                        </ul>
+                        <h4>Clicca qui per compilare il modulo</h4>
+                    </div>
+                </article>
+
             </div>
-            <span>ISCRIZIONE 2026</span>
-        </div>
-        <div class="course-body">
-            <ul class="checkmark-list">
-                <li><strong>Requisiti:</strong> Certificato medico-sportivo</li>
-                <li>Tesseramento FIV e LNI incluso nel corso</li>
-                <li>Apertura iscrizioni per moduli settimanali</li>
-                <li><strong>Clicca qui per compilare il modulo</strong></li>
-            </ul>
-        </div>
-    </article>
-
-</div>
+        </div> <!-- Chiusura corretta di flex-container-info -->
     </main>
 
     <div id="boatModal" class="modal-overlay">
@@ -221,148 +229,6 @@
         </div>
     </div>
 
-    <style>
-        .course-header.enrollment {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
-        }
-        .enrollment-card {
-            border-top: 4px solid #2a5298;
-        }
-        .course-icon-emoji {
-            font-size: 1.8rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .gallery-grid img {
-            cursor: pointer;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-        }
-        .gallery-grid img:hover {
-            transform: scale(1.04) translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-        }
-        
-        .carousel-lightbox {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(10, 17, 26, 0.88);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2100;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .carousel-lightbox.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        
-        .carousel-slide-wrapper {
-            max-width: 82%;
-            max-height: 75vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .carousel-slide-wrapper img {
-            max-width: 100%;
-            max-height: 75vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            animation: premiumFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .carousel-close {
-            position: absolute;
-            top: 24px;
-            right: 28px;
-            font-size: 2rem;
-            color: rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-            z-index: 2200;
-            line-height: 1;
-        }
-        .carousel-close:hover {
-            color: #fff;
-            transform: scale(1.1);
-        }
-        
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.25s ease;
-            z-index: 2200;
-        }
-        .carousel-btn span {
-            font-size: 1.3rem;
-            line-height: 1;
-            display: inline-block;
-        }
-        .carousel-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-50%) scale(1.05);
-        }
-        .carousel-prev { left: 24px; }
-        .carousel-next { right: 24px; }
-        
-        .carousel-counter {
-            position: absolute;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.85);
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            user-select: none;
-        }
-
-        @keyframes premiumFadeIn {
-            from { opacity: 0; transform: scale(0.97); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @media (max-width: 768px) {
-            .carousel-btn {
-                width: 44px;
-                height: 44px;
-                background: rgba(0, 0, 0, 0.4);
-            }
-            .carousel-btn span { font-size: 1rem; }
-            .carousel-prev { left: 12px; }
-            .carousel-next { right: 12px; }
-            .carousel-slide-wrapper { max-width: 90%; }
-        }
-    </style>
 
     <footer id="footer-sezione">
         <div class="footer-content">
@@ -417,7 +283,7 @@
 
             for (let i = 1; i <= 5; i++) {
                 const imgElement = document.getElementById(`img${i}`);
-                const srcPath = `immagini/${boatKey}/foto${i}.jpg`;
+                const srcPath = `/static/images/${boatKey}/foto${i}.jpg`;
                 imgElement.src = srcPath;
                 imgElement.style.display = 'block'; 
                 

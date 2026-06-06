@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo LNI" class="nav-logo-img">
+                LNI Matera Magna Grecia - Admin Console
+            </a>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('orari') }}">Date & Orari</a>
+                <a href="{{ url_for('iscrizione') }}">Iscrizione</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="form-group" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+            <form action="/auth" method="POST">
+                <h2 for="password">Inserisci la password:</h2>
+                <input type="text" id="password" name="password" required>
+                <button type="submit" class="submit-btn">Invia</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
