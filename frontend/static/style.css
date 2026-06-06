@@ -122,6 +122,12 @@
         object-fit: contain;
     }
 
+    .console-header-logo {
+        height: 110px;
+        width: auto;
+        object-fit: contain;
+    }
+
     .header-content {
         flex-grow: 1;
     }
