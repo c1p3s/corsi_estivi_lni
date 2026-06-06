@@ -378,7 +378,6 @@
         justify-content: center;
         width: 100%;
         margin-top: 40px;
-        padding: 0 20px;
     }
 
     .info-grid {
@@ -523,6 +522,7 @@
         color: var(--text-dark);
         transition: border-color 0.2s, box-shadow 0.2s;
         width: 100%;
+        resize:none;
     }
 
     .form-group input:focus, 
