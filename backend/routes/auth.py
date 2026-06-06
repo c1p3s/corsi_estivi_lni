@@ -1,10 +1,9 @@
 from flask import Blueprint, request, redirect, url_for, render_template, session
+from main import config_password
 import json
 
 auth_bp = Blueprint("auth_bp", __name__)
-with open("./backend/config.json") as f:
-    config = json.load(f)
-    config_password = config.get("password")
+
 
 
         

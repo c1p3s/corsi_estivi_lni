@@ -8,9 +8,10 @@ from routes.auth import auth_bp
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
 sock = Sock(app)
-with open("./backend/config.json") as f:
+with open("config.json") as f:
     config = json.load(f)
     config_host_key = config.get("host_key")
+    config_password = config.get("password")
 
 
 CORS(app, resources={r"/api/*"})
