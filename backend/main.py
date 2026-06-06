@@ -5,7 +5,7 @@ import os
 import json
 from routes.auth import auth_bp
 from routes.webhook import webhook_bp
-from json_reader import config_host_key
+from json_reader import config_host_key, data
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
 sock = Sock(app)
@@ -24,15 +24,11 @@ def index():
 
 @app.route('/orari', methods=['POST', 'GET'])
 def orari():
-    with open("courses.json", "r", encoding="utf-8") as f:
-        corsi = json.load(f)
-    return render_template('orari.html', corsi=corsi)
+    return render_template('orari.html', corsi=data)
 
 @app.route('/iscrizione', methods=['POST', 'GET'])
 def iscrizione():
-    with open("courses.json", "r", encoding="utf-8") as f:
-        corsi = json.load(f)
-    return render_template('iscrizione.html', corsi = corsi)
+    return render_template('iscrizione.html', corsi = data)
 
 @app.route('/carpediem', methods=['POST', 'GET'])
 def carpediem():

@@ -11,6 +11,9 @@ try:
         config = json.load(f)
         config_host_key = config.get("host_key")
         config_password = config.get("password")
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f) 
+    
 except FileNotFoundError as e:
     print(f"Errore: json_reader non trova il file in: {CONFIG_PATH}")
     raise e
