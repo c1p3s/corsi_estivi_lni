@@ -6,142 +6,8 @@
     <title>Date e Orari - Scuola Vela LNI Matera Magna Grecia</title>
    
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
-   
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-    <style>
-        /* ==========================================================================
-            STILI SPECIFICI COMPLETI PER LA PAGINA ORARI (NON TOCCARE)
-            ========================================================================== */
-        .timetable-section {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            margin-top: 30px;
-            margin-bottom: 40px;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-
-        .timetable-header {
-            padding: 20px 25px;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .timetable-header.optimist { background: #0275d8; }
-        .timetable-header.laser { background: #d9534f; }
-        .timetable-header.hobie { background: #f0ad4e; }
-        .timetable-header.info { background: #0275d8; }
-
-        .timetable-logo-wrapper {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 8px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-        }
-
-        .timetable-logo-wrapper img {
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .timetable-header h3 {
-            margin: 0;
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .timetable-body {
-            padding: 10px 0;
-        }
-
-        .timetable-row-header {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            padding: 15px 25px;
-            background: #f8f9fa;
-            font-weight: 700;
-            color: #0a111a;
-            border-bottom: 2px solid #edf0f4;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .timetable-row {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            padding: 16px 25px;
-            border-bottom: 1px solid #edf0f4;
-            align-items: center;
-            transition: background 0.2s ease;
-        }
-
-        .timetable-row:last-child {
-            border-bottom: none;
-        }
-
-        .timetable-row:hover {
-            background: #fdfdfe;
-        }
-
-        .timetable-row > div:first-child {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .timetable-row > div:last-child {
-            color: #555555;
-            font-weight: 500;
-        }
-
-        .month-label {
-            display: inline-block;
-            background: #eef2f7;
-            color: #4a5568;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-right: 8px;
-            text-transform: uppercase;
-        }
-
-        /* Responsive interno tabelle */
-        @media (max-width: 600px) {
-            .timetable-row-header, .timetable-row {
-                grid-template-columns: 1fr;
-                gap: 5px;
-                padding: 15px;
-            }
-            .timetable-row-header {
-                display: none; /* Nascondi intestazione su mobile per layout a card */
-            }
-            .timetable-row {
-                border-bottom: 1px solid #eee;
-            }
-            .timetable-row > div:last-child {
-                padding-left: 0;
-                color: #d9534f; /* Evidenzia l'orario su mobile */
-                font-weight: bold;
-            }
-            .timetable-header {
-                padding: 15px;
-            }
-            .timetable-header h3 {
-                font-size: 1.15rem;
-            }
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -198,134 +64,69 @@
                 <p style="margin-top: 15px; font-weight: 600;">La tua passione non conosce ostacoli: contattaci per concordare il percorso perfetto per te!</p>
             </div>
         </div>
-        <div class="timetable-section">
-            <div class="timetable-header optimist">
-                <div class="timetable-logo-wrapper">
-                    <img src="{{ url_for('static', filename='images/logo_optimist.png') }}" alt="Logo Optimist">
-                </div>
-                <h3>Corsi OPTIMIST (6 - 12 anni)</h3>
+         {% for key, corso in corsi.items() %}
+
+    <div class="timetable-section">
+
+        <div class="timetable-header {{ key }}">
+
+            <div class="timetable-logo-wrapper">
+
+                <img src="{{ url_for('static', filename='images/logo_' + key + '.png') }}" alt="Logo {{ key }}">
+
             </div>
-            <div class="timetable-body">
-                <div class="timetable-row-header">
-                    <div>Periodo / Mese</div>
-                    <div>Orario Turno</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio:</span> Dal 13 al 17 Luglio</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio:</span> Dal 20 al 24 Luglio</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio/Agosto:</span> Dal 27 al 31 Luglio</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 3 al 7 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 10 al 14 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 17 al 21 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 24 al 28 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-            </div>
+
+            <h3>{{ corso.label }}</h3>
+
         </div>
 
-        <div class="timetable-section">
-            <div class="timetable-header laser">
-                <div class="timetable-logo-wrapper">
-                    <img src="{{ url_for('static', filename='images/logo_laser.png') }}" alt="Logo Laser">
-                </div>
-                <h3>Corsi LASER (12+ anni)</h3>
+        <div class="timetable-body">
+
+            <div class="timetable-row-header">
+
+                <div>Periodo / Mese</div>
+
+                <div>Orario Turno</div>
+
             </div>
-            <div class="timetable-body">
-                <div class="timetable-row-header">
-                    <div>Periodo / Mese</div>
-                    <div>Orario Turno</div>
+
+            {% for turno in corso.turni %}
+
+            <div class="timetable-row">
+
+                <div>
+
+                    <span class="month-label">{{ turno.mese }}:</span>
+
+                    {{ turno.periodo }}
+
                 </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio:</span> Dal 13 al 17 Luglio</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+
+                <div>
+
+                    {% for fascia in turno.fasce %}
+
+                        <span>
+
+                            {{ fascia.orario }}
+
+                        </span>
+
+                        {% if not loop.last %} / {% endif %}
+
+                    {% endfor %}
+
                 </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio:</span> Dal 20 al 24 Luglio</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio/Agosto:</span> Dal 27 al 31 Luglio</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 3 al 7 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 10 al 14 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 17 al 21 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 24 al 28 Agosto</div>
-                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
-                </div>
+
             </div>
+
+            {% endfor %}
+
         </div>
 
-        <div class="timetable-section">
-            <div class="timetable-header hobie">
-                <div class="timetable-logo-wrapper">
-                    <img src="{{ url_for('static', filename='images/logo_hobiecat.png') }}" alt="Logo Hobie Cat 16">
-                </div>
-                <h3>Corsi HOBIE CAT 16 (12+ anni)</h3>
-            </div>
-            <div class="timetable-body">
-                <div class="timetable-row-header">
-                    <div>Periodo / Mese</div>
-                    <div>Orario Turno</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio:</span> Dal 13 al 17 Luglio</div>
-                    <div>Pomeriggio: 16:00 - 17:30</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio:</span> Dal 20 al 24 Luglio</div>
-                    <div>Pomeriggio: 16:00 - 17:30</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Luglio/Agosto:</span> Dal 27 al 31 Luglio</div>
-                    <div>Pomeriggio: 16:00 - 17:30</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 3 al 7 Agosto</div>
-                    <div>Pomeriggio: 16:00 - 17:30</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 10 al 14 Agosto</div>
-                    <div>Pomeriggio: 16:00 - 17:30</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 17 al 21 Agosto</div>
-                    <div>Pomeriggio: 16:00 - 17:30</div>
-                </div>
-                <div class="timetable-row">
-                    <div><span class="month-label">Agosto:</span> Dal 24 al 28 Agosto</div>
-                    <div>Pomeriggio: 16:00 - 17:30</div>
-                </div>
-            </div>
-        </div>
+    </div>
+
+    {% endfor %}
 
     </main>
 

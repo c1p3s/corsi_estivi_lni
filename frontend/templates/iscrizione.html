@@ -71,10 +71,6 @@
                                 <input type="text" name="cognome" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Genitore / Tutore Legale</label>
-                            <input type="text" name="genitore" placeholder="Nome e Cognome del genitore">
-                        </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Codice Fiscale Allievo</label>
@@ -82,28 +78,43 @@
                             </div>
                             <div class="form-group">
                                 <label>Data di Nascita</label>
-                                <input type="date" name="data_nascita" required>
+                                <input type="date" name="data_nascita" id="dataNascita" required>
                             </div>
                         </div>
+
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Settimana Corso</label>
-                                <select name="settimana" required>
-                                    <option value="13-19 Luglio">13 - 19 Luglio</option>
-                                    <option value="20-26 Luglio">20 - 26 Luglio</option>
-                                    <option value="27 Lug-2 Ago">27 Lug - 2 Ago</option>
-                                    <option value="3-9 Agosto">3 - 9 Agosto</option>
-                                    <option value="10-16 Agosto">10 - 16 Agosto</option>
-                                    <option value="17-23 Agosto">17 - 23 Agosto</option>
-                                    <option value="24-31 Agosto">24 - 31 Agosto</option>
+                                <label>Luogo di nascita</label>
+                                <input type="text" name="luogo_nascita">
+                            </div>
+                            <div class="form-group">
+                                <label>Via / Indirizzo</label>
+                                <input type="text" name="via">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Comune di residenza</label>
+                                <input type="text" name="comune_residenza">
+                            </div>
+                            <div class="form-group">
+                                <label>CAP</label>
+                                <input type="text" name="cap">
+                            </div>
+                        </div>
+                        
+                      <div class="form-row">
+                            <div class="form-group">
+                                <label>Corso d'interesse</label>
+                                <select name="corso" id="corsoSelect" required>
+                                    <option value="">Seleziona corso</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Corso d'interesse</label>
-                                <select name="corso">
-                                    <option value="Optimist">Optimist (6-12 anni)</option>
-                                    <option value="Laser">Laser (12+ anni)</option>
-                                    <option value="Hobie Cat">Hobie Cat 16</option>
+                                <label>Settimana Corso</label>
+                                <select name="settimana" id="settimanaSelect" required>
+                                    <option value="">Seleziona settimana</option>
                                 </select>
                             </div>
                         </div>
@@ -117,8 +128,87 @@
                                 <input type="tel" name="telefono" required>
                             </div>
                         </div>
+
+                        <div id="tutoreSection" style="display:none; margin-top:20px;">
+
+                        <h3 style="margin-bottom:15px;">Dati del Genitore / Tutore Legale</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <input type="text" name="tutore_nome">
+                            </div>
+                            <div class="form-group">
+                                <label>Cognome</label>
+                                <input type="text" name="tutore_cognome">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Data di nascita</label>
+                                <input type="date" name="tutore_data_nascita">
+                            </div>
+                            <div class="form-group">
+                                <label>Comune di nascita</label>
+                                <input type="text" name="tutore_comune_nascita">
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label>Note aggiuntive (es. allergie, esperienze pregresse)</label>
+                            <label>Codice Fiscale</label>
+                            <input type="text" name="tutore_codice_fiscale">
+                        </div>
+                        <div class="form-group">
+                            <label>Via / Indirizzo</label>
+                            <input type="text" name="tutore_via">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Comune di residenza</label>
+                                <input type="text" name="tutore_comune_residenza">
+                            </div>
+                            <div class="form-group">
+                                <label>CAP</label>
+                                <input type="text" name="tutore_cap">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Telefono</label>
+                                <input type="tel" name="tutore_telefono">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="tutore_email">
+                            </div>
+                        </div>
+                        <h4 style="margin-top:20px;">Documento di Identità</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Tipo documento</label>
+                                <select name="tutore_tipo_documento">
+                                    <option value="">Seleziona</option>
+                                    <option value="Carta d'identità">Carta d'identità</option>
+                                    <option value="Patente">Patente</option>
+                                    <option value="Passaporto">Passaporto</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Numero documento</label>
+                                <input type="text" name="tutore_numero_documento">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Luogo di rilascio</label>
+                                <input type="text" name="tutore_luogo_rilascio">
+                            </div>
+                            <div class="form-group">
+                                <label>Data di rilascio</label>
+                                <input type="date" name="tutore_data_rilascio">
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label>Note aggiuntive (es. allergie, esperienze pregresse, preferenze per la fascia oraria)</label>
                             <textarea name="note" rows="3"></textarea>
                         </div>
                         <button type="submit" class="submit-btn">INVIA ISCRIZIONE</button>
@@ -151,6 +241,7 @@
     <script>
         const form = document.getElementById("iscrizioneForm");
         const status = document.getElementById("form-status");
+        const corsiData = JSON.parse('{{ corsi | tojson | safe }}');
 
         form.addEventListener("submit", function(event) {
             event.preventDefault();
@@ -169,6 +260,80 @@
                 status.innerHTML = "Si è verificato un errore. Assicurati che l'URL nel form sia corretto.";
             });
         });
+
+            const corsoSelect = document.getElementById("corsoSelect");
+            const settimanaSelect = document.getElementById("settimanaSelect");
+            function reset(select, text) {
+                select.innerHTML = `<option value="">${text}</option>`;
+            }
+
+            // Carica corsi
+            Object.entries(corsiData).forEach(([key, corso]) => {
+                const option = document.createElement("option");
+                option.value = key;
+                option.textContent = corso.label;
+                corsoSelect.appendChild(option);
+            });
+
+            // Corso → settimane
+            corsoSelect.addEventListener("change", () => {
+                reset(settimanaSelect, "Seleziona settimana");
+                const corso = corsiData[corsoSelect.value];
+                if (!corso) return;
+                corso.turni.forEach(turno => {
+                    if (!turno.available)
+                        return;
+                    const option = document.createElement("option");
+                    option.value = turno.periodo;
+                    option.textContent = turno.periodo;
+                    settimanaSelect.appendChild(option);
+                });
+            });
+
+            const dataNascita = document.getElementById("dataNascita");
+            const tutoreSection = document.getElementById("tutoreSection");
+            const campiTutore = tutoreSection.querySelectorAll(
+                "input, select"
+            );
+
+            function aggiornaTutore() {
+                if (!dataNascita.value) {
+                    tutoreSection.style.display = "none";
+                    campiTutore.forEach(campo => {
+                        campo.required = false;
+                    });
+                    return;
+                }
+
+                const nascita = new Date(dataNascita.value);
+                const oggi = new Date();
+                let eta = oggi.getFullYear() - nascita.getFullYear();
+                const compleannoNonPassato =
+                    oggi.getMonth() < nascita.getMonth() ||
+                    (
+                        oggi.getMonth() === nascita.getMonth() &&
+                        oggi.getDate() < nascita.getDate()
+                    );
+
+                if (compleannoNonPassato) {
+                    eta--;
+                }
+
+                if (eta < 18) {
+                    tutoreSection.style.display = "block";
+                    campiTutore.forEach(campo => {
+                        campo.required = true;
+                    });
+
+                } else {
+                    tutoreSection.style.display = "none";
+                    campiTutore.forEach(campo => {
+                        campo.required = false;
+                    });
+                }
+            }
+
+            dataNascita.addEventListener("change", aggiornaTutore);
     </script>
 </body>
 </html>

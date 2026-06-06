@@ -19,7 +19,7 @@ def auth():
         error = "La password è errata, riprova"
         return render_template('carpediem.html', error=error)
 
-@auth_bp.route('/logout', methods=['POST']) 
+@auth_bp.route('/logout', methods=['POST', 'GET']) 
 def logout():
     session.pop('logged_in', None)
     return redirect(url_for('index'))

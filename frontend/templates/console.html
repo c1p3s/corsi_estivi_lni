@@ -3,12 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Console</title>
 </head>
 <body>
-    <h1>Console</h1>
-    <form action="/logout" method="POST">
-        <button type="submit">Logout</button>
-    </form>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo LNI" class="nav-logo-img">
+                LNI Matera Magna Grecia - Admin Console
+            </a>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('auth_bp.logout') }}" method="POST">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-header">
+        <div class="header-main-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Lega Navale" class="header-logo">
+            
+            <div class="header-content">
+                <h1>Admin Console</h1>
+                <h3 class="console-tagline">Ciao Vincenzo</h3>
+            </div>
+            
+            <img src="{{ url_for('static', filename='images/logo_sport.png') }}" alt="Logo Sportivo" class="console-header-logo">
+        </div>
+    </header>
+
+      <main class="container">
+
+        <div class="timetable-section" style="border: 2px dashed #0275d8; background: #f0f7ff;">
+            <div class="timetable-header info">
+                <h3>⚓ Prossimi eventi</h3>
+            </div>
+            <div class="timetable-body" style="padding: 20px 25px; color: #2c3e50; line-height: 1.6;">
+                <p>// QUI RESOCONTO GIORNATA//</p>
+            </div>
+        </div>
+        <div class="timetable-section">
+            <div class="timetable-header optimist">
+                <div class="timetable-logo-wrapper">
+                    <img src="{{ url_for('static', filename='images/logo_optimist.png') }}" alt="Logo Optimist">
+                </div>
+                <h3>Corsi OPTIMIST</h3>
+            </div>
+            <div class="timetable-body">
+                <div class="timetable-row-header">
+                    <div>Periodo / Mese</div>
+                    <div>Orario Turno</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio:</span> Dal 13 al 17 Luglio</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio:</span> Dal 20 al 24 Luglio</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio/Agosto:</span> Dal 27 al 31 Luglio</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 3 al 7 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 10 al 14 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 17 al 21 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 24 al 28 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timetable-section">
+            <div class="timetable-header laser">
+                <div class="timetable-logo-wrapper">
+                    <img src="{{ url_for('static', filename='images/logo_laser.png') }}" alt="Logo Laser">
+                </div>
+                <h3>Corsi LASER</h3>
+            </div>
+            <div class="timetable-body">
+                <div class="timetable-row-header">
+                    <div>Periodo / Mese</div>
+                    <div>Orario Turno</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio:</span> Dal 13 al 17 Luglio</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio:</span> Dal 20 al 24 Luglio</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio/Agosto:</span> Dal 27 al 31 Luglio</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 3 al 7 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 10 al 14 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 17 al 21 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 24 al 28 Agosto</div>
+                    <div>10:00 - 11:30 / 11:30 - 14:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timetable-section">
+            <div class="timetable-header hobie">
+                <div class="timetable-logo-wrapper">
+                    <img src="{{ url_for('static', filename='images/logo_hobiecat.png') }}" alt="Logo Hobie Cat 16">
+                </div>
+                <h3>Corsi HOBIE CAT 16</h3>
+            </div>
+            <div class="timetable-body">
+                <div class="timetable-row-header">
+                    <div>Periodo / Mese</div>
+                    <div>Orario Turno</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio:</span> Dal 13 al 17 Luglio</div>
+                    <div>Pomeriggio: 16:00 - 17:30</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio:</span> Dal 20 al 24 Luglio</div>
+                    <div>Pomeriggio: 16:00 - 17:30</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Luglio/Agosto:</span> Dal 27 al 31 Luglio</div>
+                    <div>Pomeriggio: 16:00 - 17:30</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 3 al 7 Agosto</div>
+                    <div>Pomeriggio: 16:00 - 17:30</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 10 al 14 Agosto</div>
+                    <div>Pomeriggio: 16:00 - 17:30</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 17 al 21 Agosto</div>
+                    <div>Pomeriggio: 16:00 - 17:30</div>
+                </div>
+                <div class="timetable-row">
+                    <div><span class="month-label">Agosto:</span> Dal 24 al 28 Agosto</div>
+                    <div>Pomeriggio: 16:00 - 17:30</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
 </body>
 </html>

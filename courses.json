@@ -1,0 +1,201 @@
+{
+  "optimist": {
+    "label": "Corsi OPTIMIST (6 - 12 anni)",
+    "turni": [
+      {
+        "periodo": "Dal 13 al 17 Luglio",
+        "mese": "Luglio",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 20 al 24 Luglio",
+        "mese": "Luglio",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30" },
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 27 al 31 Luglio",
+        "mese": "Luglio / Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 3 al 7 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 10 al 14 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 17 al 21 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 24 al 28 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      }
+    ]
+  },
+
+  "laser": {
+    "label": "Corsi LASER (12+ anni)",
+    "turni": [
+      {
+        "periodo": "Dal 13 al 17 Luglio",
+        "mese": "Luglio",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 20 al 24 Luglio",
+        "mese": "Luglio",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 27 al 31 Luglio",
+        "mese": "Luglio / Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 3 al 7 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 10 al 14 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 17 al 21 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      },
+      {
+        "periodo": "Dal 24 al 28 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "10:00 - 11:30"},
+          { "orario": "11:30 - 14:00"}
+        ]
+      }
+    ]
+  },
+
+  "hobiecat": {
+    "label": "Corsi HOBIE CAT 16 (12+ anni)",
+    "turni": [
+      {
+        "periodo": "Dal 13 al 17 Luglio",
+        "mese": "Luglio",
+        "available": true,
+        "fasce": [
+          { "orario": "16:00 - 17:30"}
+        ]
+      },
+      {
+        "periodo": "Dal 20 al 24 Luglio",
+        "mese": "Luglio",
+        "available": true,
+        "fasce": [
+          { "orario": "16:00 - 17:30"}
+        ]
+      },
+      {
+        "periodo": "Dal 27 al 31 Luglio",
+        "mese": "Luglio / Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "16:00 - 17:30"}
+        ]
+      },
+      {
+        "periodo": "Dal 3 al 7 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "16:00 - 17:30"}
+        ]
+      },
+      {
+        "periodo": "Dal 10 al 14 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "16:00 - 17:30"}
+        ]
+      },
+      {
+        "periodo": "Dal 17 al 21 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "16:00 - 17:30"}
+        ]
+      },
+      {
+        "periodo": "Dal 24 al 28 Agosto",
+        "mese": "Agosto",
+        "available": true,
+        "fasce": [
+          { "orario": "16:00 - 17:30"}
+        ]
+      }
+    ]
+  }
+}

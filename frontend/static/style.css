@@ -141,6 +141,13 @@
         font-weight: 300;
     }
 
+     .console-tagline {
+        font-size: 1.8rem;
+        font-style: italic;
+        color: #e0e5ec;
+        font-weight: 300;
+    }
+
     .sub-info {
         font-size: 0.95rem;
         color: #b0c2de;
@@ -853,6 +860,7 @@
         }
         
         .header-logo { height: 85px; }
+        .console-header-logo {display:none;}
         .header-content h1 { font-size: 2.2rem; }
         .tagline { font-size: 1.15rem; }
         
@@ -902,3 +910,133 @@
         .form-group input, .form-group select, .form-group textarea { font-size: 16px; padding: 14px 12px; }
         .submit-btn { padding: 18px; font-size: 1.15rem; }
     }
+
+
+ .timetable-section {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            margin-top: 30px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .timetable-header {
+            padding: 20px 25px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .timetable-header.optimist { background: #0275d8; }
+        .timetable-header.laser { background: #d9534f; }
+        .timetable-header.hobie { background: #f0ad4e; }
+        .timetable-header.info { background: #0275d8; }
+
+        .timetable-logo-wrapper {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+        }
+
+        .timetable-logo-wrapper img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .timetable-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .timetable-body {
+            padding: 10px 0;
+        }
+
+        .timetable-row-header {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            padding: 15px 25px;
+            background: #f8f9fa;
+            font-weight: 700;
+            color: #0a111a;
+            border-bottom: 2px solid #edf0f4;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timetable-row {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            padding: 16px 25px;
+            border-bottom: 1px solid #edf0f4;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .timetable-row:last-child {
+            border-bottom: none;
+        }
+
+        .timetable-row:hover {
+            background: #fdfdfe;
+        }
+
+        .timetable-row > div:first-child {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .timetable-row > div:last-child {
+            color: #555555;
+            font-weight: 500;
+        }
+
+        .month-label {
+            display: inline-block;
+            background: #eef2f7;
+            color: #4a5568;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive interno tabelle */
+        @media (max-width: 600px) {
+            .timetable-row-header, .timetable-row {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                padding: 15px;
+            }
+            .timetable-row-header {
+                display: none; /* Nascondi intestazione su mobile per layout a card */
+            }
+            .timetable-row {
+                border-bottom: 1px solid #eee;
+            }
+            .timetable-row > div:last-child {
+                padding-left: 0;
+                color: #d9534f; /* Evidenzia l'orario su mobile */
+                font-weight: bold;
+            }
+            .timetable-header {
+                padding: 15px;
+            }
+            .timetable-header h3 {
+                font-size: 1.15rem;
+            }
+        }

@@ -12,6 +12,7 @@ with open("./backend/config.json") as f:
     config = json.load(f)
     config_host_key = config.get("host_key")
 
+
 CORS(app, resources={r"/api/*"})
 app.register_blueprint(auth_bp)
 app.config['SESSION_COOKIE_HTTPONLY'] = True
@@ -25,11 +26,15 @@ def index():
 
 @app.route('/orari', methods=['POST', 'GET'])
 def orari():
-    return render_template('orari.html')
+    with open("courses.json", "r", encoding="utf-8") as f:
+        corsi = json.load(f)
+    return render_template('orari.html', corsi=corsi)
 
 @app.route('/iscrizione', methods=['POST', 'GET'])
 def iscrizione():
-    return render_template('iscrizione.html')
+    with open("courses.json", "r", encoding="utf-8") as f:
+        corsi = json.load(f)
+    return render_template('iscrizione.html', corsi = corsi)
 
 @app.route('/carpediem', methods=['POST', 'GET'])
 def carpediem():
