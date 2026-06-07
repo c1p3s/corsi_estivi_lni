@@ -43,7 +43,7 @@
                     <div class="requirement-card">
                         <p>Al momento dell'iscrizione, assicurati di avere a portata di mano:</p>
                         <ul>
-                            <li>Documento di riconoscimento del genitore/tutore.</li>
+                            <li>Documento di riconoscimento del genitore/tutore (se minorenne) o personale (se maggiorenne).</li>
                             <li>Codice fiscale dell'allievo.</li>
                         </ul>
                     </div>
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="form-pane">
-                    <form id="iscrizioneForm" action="https://script.google.com/macros/s/AKfycbwFWXqaltUU_rxPJjR10b687P5O7nZtfuXZMpmpARHYakyHW-iuyubg_iyPDjp0ZTYM/exec" method="POST">
+                    <form id="iscrizioneForm" action="https://script.google.com/macros/s/AKfycbyPC7EZCH2tsz9s0GrJKmknWPFvXapt898heneqqrNPMiljwHNkrR5UF6tKY112XXkS/exec" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Nome Allievo</label>
@@ -104,16 +104,16 @@
                             </div>
                         </div>
                         
-                      <div class="form-row">
+                        <div class="form-row">
                             <div class="form-group">
                                 <label>Corso d'interesse</label>
-                                <select type="text" name="corso" id="corsoSelect" required>
+                                <select name="corso" id="corsoSelect" required>
                                     <option value="">Seleziona corso</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Settimana Corso</label>
-                                <select type="text" name="settimana" id="settimanaSelect" required>
+                                <select name="settimana" id="settimanaSelect" required>
                                     <option value="">Seleziona settimana</option>
                                 </select>
                             </div>
@@ -130,84 +130,87 @@
                         </div>
 
                         <div id="tutoreSection" style="display:none; margin-top:20px;">
+                            <h3 style="margin-bottom:15px;">Dati del Genitore / Tutore Legale</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nome Genitore</label>
+                                    <input type="text" name="nome_genitore">
+                                </div>
+                                <div class="form-group">
+                                    <label>Cognome Genitore</label>
+                                    <input type="text" name="cognome_genitore">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Data di nascita</label>
+                                    <input type="date" name="data_nascita_genitore">
+                                </div>
+                                <div class="form-group">
+                                    <label>Comune di nascita</label>
+                                    <input type="text" name="comune_nascita_genitore">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Codice Fiscale Genitore</label>
+                                <input type="text" name="cf_genitore">
+                            </div>
+                            <div class="form-group">
+                                <label>Via / Indirizzo</label>
+                                <input type="text" name="indirizzo_genitore">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Comune di residenza</label>
+                                    <input type="text" name="comune_residenza_genitore">
+                                </div>
+                                <div class="form-group">
+                                    <label>CAP</label>
+                                    <input type="text" name="cap_genitore">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Telefono</label>
+                                    <input type="tel" name="telefono_genitore">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email_genitore">
+                                </div>
+                            </div>
+                        </div>
 
-                        <h3 style="margin-bottom:15px;">Dati del Genitore / Tutore Legale</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Nome</label>
-                                <input type="text" name="nome_genitore">
+                        <div id="documentoSection" style="margin-top:20px;">
+                            <h3 id="documentoTitle" style="margin-bottom:15px;">Documento di Identità</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Tipo documento</label>
+                                    <select name="tipo_doc" id="tipoDoc" required>
+                                        <option value="">Seleziona</option>
+                                        <option value="Carta d'identità">Carta d'identità</option>
+                                        <option value="Patente">Patente</option>
+                                        <option value="Passaporto">Passaporto</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Numero documento</label>
+                                    <input type="text" name="num_doc" id="numDoc" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Cognome</label>
-                                <input type="text" name="cognome_genitore">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Data di nascita</label>
-                                <input type="date" name="data_nascita_genitore">
-                            </div>
-                            <div class="form-group">
-                                <label>Comune di nascita</label>
-                                <input type="text" name="comune_nascita_genitore">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Codice Fiscale</label>
-                            <input type="text" name="cf_genitore">
-                        </div>
-                        <div class="form-group">
-                            <label>Via / Indirizzo</label>
-                            <input type="text" name="indirizzo_genitore">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Comune di residenza</label>
-                                <input type="text" name="comune_residenza_genitore">
-                            </div>
-                            <div class="form-group">
-                                <label>CAP</label>
-                                <input type="text" name="cap_genitore">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Luogo di rilascio</label>
+                                    <input type="text" name="luogo_rilascio_doc" id="luogoDoc" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Data di rilascio</label>
+                                    <input type="date" name="data_rilascio_doc" id="dataDoc" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Telefono</label>
-                                <input type="tel" name="telefono_genitore">
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" name="email_genitore">
-                            </div>
-                        </div>
-                        <h4 style="margin-top:20px;">Documento di Identità</h4>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Tipo documento</label>
-                                <select type="text" name="tipo_doc_genitore">
-                                    <option value="">Seleziona</option>
-                                    <option value="Carta d'identità">Carta d'identità</option>
-                                    <option value="Patente">Patente</option>
-                                    <option value="Passaporto">Passaporto</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Numero documento</label>
-                                <input type="text" name="num_doc_genitore">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Luogo di rilascio</label>
-                                <input type="text" name="luogo_rilascio_doc_genitore">
-                            </div>
-                            <div class="form-group">
-                                <label>Data di rilascio</label>
-                                <input type="date" name="data_rilascio_doc_genitore">
-                            </div>
-                        </div>
-                    </div>
-                        <div class="form-group">
+
+                        <div class="form-group" style="margin-top:20px;">
                             <label>Note aggiuntive (es. allergie, esperienze pregresse, preferenze per la fascia oraria)</label>
                             <textarea name="note" rows="3"></textarea>
                         </div>
@@ -242,111 +245,114 @@
         const form = document.getElementById("iscrizioneForm");
         const status = document.getElementById("form-status");
         const corsiData = JSON.parse('{{ corsi | tojson | safe }}');
+        const corsoSelect = document.getElementById("corsoSelect");
+        const settimanaSelect = document.getElementById("settimanaSelect");
+        const dataNascita = document.getElementById("dataNascita");
+        const tutoreSection = document.getElementById("tutoreSection");
+        const documentoTitle = document.getElementById("documentoTitle");
+
+        // Seleziona i gruppi di campi per gestire i controlli di obbligatorietà
+        const campiTutore = tutoreSection.querySelectorAll("input");
+        const campiDocumento = document.getElementById("documentoSection").querySelectorAll("input, select");
 
         form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        status.innerHTML = "Invio in corso...";
-        
-        // Converte i dati del form in un oggetto standard
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
+            event.preventDefault();
+            status.innerHTML = "Invio in corso...";
+            
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'text/plain'
+                }
+            })
+            .then(response => {
+                status.innerHTML = "Grazie! La tua richiesta è stata inviata correttamente.";
+                form.reset();
+                tutoreSection.style.display = "none";
+                aggiornaTutore(); // Sincronizza i campi dopo il reset
+            })
+            .catch(error => {
+                status.innerHTML = "Si è verificato un errore durante l'invio. Riprova.";
+                console.error(error);
+            });
         });
-        
-        // Inviamo i dati come testo JSON a Google Apps Script
-        fetch(form.action, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'text/plain' // Evita problemi di CORS pre-flight con Apps Script
-            }
-        })
-        .then(response => {
-            status.innerHTML = "Grazie! La tua richiesta è stata inviata correttamente.";
-            form.reset();
-            tutoreSection.style.display = "none"; // Reset della sezione dinamica
-        })
-        .catch(error => {
-            status.innerHTML = "Si è verificato un errore durante l'invio. Riprova.";
-            console.error(error);
+
+        function reset(select, text) {
+            select.innerHTML = `<option value="">${text}</option>`;
+        }
+
+        // Carica i corsi dinamici provenienti da Flask
+        Object.entries(corsiData).forEach(([key, corso]) => {
+            const option = document.createElement("option");
+            option.value = key;
+            option.textContent = corso.label;
+            corsoSelect.appendChild(option);
         });
-    });
 
-
-            const corsoSelect = document.getElementById("corsoSelect");
-            const settimanaSelect = document.getElementById("settimanaSelect");
-            function reset(select, text) {
-                select.innerHTML = `<option value="">${text}</option>`;
-            }
-
-            // Carica corsi
-            Object.entries(corsiData).forEach(([key, corso]) => {
+        // Evento cambio corso -> aggiorna settimane disponibili
+        corsoSelect.addEventListener("change", () => {
+            reset(settimanaSelect, "Seleziona settimana");
+            const corso = corsiData[corsoSelect.value];
+            if (!corso) return;
+            corso.turni
+                .filter(turno => turno.available === true)
+                .forEach(turno => {
                 const option = document.createElement("option");
-                option.value = key;
-                option.textContent = corso.label;
-                corsoSelect.appendChild(option);
+                option.value = turno.periodo;
+                option.textContent = turno.periodo;
+                settimanaSelect.appendChild(option);
             });
+        });
 
-            // Corso → settimane
-            corsoSelect.addEventListener("change", () => {
-                reset(settimanaSelect, "Seleziona settimana");
-                const corso = corsiData[corsoSelect.value];
-                if (!corso) return;
-                corso.turni
-                    .filter(turno => turno.available === true)
-                    .forEach(turno => {
-                    const option = document.createElement("option");
-                    option.value = turno.periodo;
-                    option.textContent = turno.periodo;
-                    settimanaSelect.appendChild(option);
-                });
-            });
-
-            const dataNascita = document.getElementById("dataNascita");
-            const tutoreSection = document.getElementById("tutoreSection");
-            const campiTutore = tutoreSection.querySelectorAll(
-                "input, select"
-            );
-
-            function aggiornaTutore() {
-                if (!dataNascita.value) {
-                    tutoreSection.style.display = "none";
-                    campiTutore.forEach(campo => {
-                        campo.required = false;
-                    });
-                    return;
-                }
-
-                const nascita = new Date(dataNascita.value);
-                const oggi = new Date();
-                let eta = oggi.getFullYear() - nascita.getFullYear();
-                const compleannoNonPassato =
-                    oggi.getMonth() < nascita.getMonth() ||
-                    (
-                        oggi.getMonth() === nascita.getMonth() &&
-                        oggi.getDate() < nascita.getDate()
-                    );
-
-                if (compleannoNonPassato) {
-                    eta--;
-                }
-
-                if (eta < 18) {
-                    tutoreSection.style.display = "block";
-                    campiTutore.forEach(campo => {
-                        campo.required = true;
-                    });
-
-                } else {
-                    tutoreSection.style.display = "none";
-                    campiTutore.forEach(campo => {
-                        campo.required = false;
-                    });
-                }
+        // Funzione per mostrare/nascondere la sezione genitore e aggiornare i requisiti del documento
+        function aggiornaTutore() {
+            // Se la data di nascita è vuota, rendiamo i documenti comunque obbligatori
+            if (!dataNascita.value) {
+                tutoreSection.style.display = "none";
+                campiTutore.forEach(campo => campo.required = false);
+                campiDocumento.forEach(campo => campo.required = true);
+                documentoTitle.textContent = "Documento di Identità";
+                return;
             }
 
-            dataNascita.addEventListener("change", aggiornaTutore);
+            const nascita = new Date(dataNascita.value);
+            const oggi = new Date();
+            let eta = oggi.getFullYear() - nascita.getFullYear();
+            const compleannoNonPassato =
+                oggi.getMonth() < nascita.getMonth() ||
+                (
+                    oggi.getMonth() === nascita.getMonth() &&
+                    oggi.getDate() < nascita.getDate()
+                );
+
+            if (compleannoNonPassato) {
+                eta--;
+            }
+
+            // I campi del documento rimangono sempre obbligatori
+            campiDocumento.forEach(campo => campo.required = true);
+
+            if (eta < 18) {
+                // Se minorenne mostra la sezione anagrafica genitore e adatta il titolo
+                tutoreSection.style.display = "block";
+                documentoTitle.textContent = "Documento di Identità del Genitore / Tutore Legale";
+                campiTutore.forEach(campo => campo.required = true);
+            } else {
+                // Se maggiorenne nasconde i dati genitore e reimposta il titolo per l'allievo
+                tutoreSection.style.display = "none";
+                documentoTitle.textContent = "Documento di Identità dell'Allievo";
+                campiTutore.forEach(campo => campo.required = false);
+            }
+        }
+
+        dataNascita.addEventListener("change", aggiornaTutore);
     </script>
 </body>
 </html>
