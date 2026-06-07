@@ -7,7 +7,7 @@ webhook_bp = Blueprint("webhook_bp", __name__)
 @webhook_bp.route('/update', methods=['POST'])
 def update():
     if request.method == 'POST':
-        script_path = '/home/lorehh/update.sh'
+        script_path = '/home/lnimateramagnagrecia/corsi_estivi_lni/update.sh'
         
         if os.path.exists(script_path):
             # Esegue lo script in background
