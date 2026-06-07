@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SECRET=$(python3 -c "import json; print(json.load(open('config.json'))['password'])")
+SECRET=$(python3 -c "import json; print(json.load(open('backend/config.json'))['password'])")
 
 URL="https://lnimateramagnagrecia.pythonanywhere.com/update"
 
