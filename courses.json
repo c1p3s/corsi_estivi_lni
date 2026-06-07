@@ -7,8 +7,12 @@
         "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -16,17 +20,25 @@
         "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30" },
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
         "periodo": "Dal 27 al 31 Luglio",
-        "mese": "Luglio / Agosto",
+        "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -34,8 +46,12 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -43,8 +59,12 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -52,8 +72,12 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -61,13 +85,16 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       }
     ]
   },
-
   "laser": {
     "label": "Corsi LASER (12+ anni)",
     "turni": [
@@ -76,8 +103,12 @@
         "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -85,17 +116,25 @@
         "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
         "periodo": "Dal 27 al 31 Luglio",
-        "mese": "Luglio / Agosto",
+        "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -103,8 +142,12 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -112,8 +155,12 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -121,8 +168,12 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       },
       {
@@ -130,13 +181,16 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "10:00 - 11:30"},
-          { "orario": "11:30 - 14:00"}
+          {
+            "orario": "10:00 - 11:30"
+          },
+          {
+            "orario": "11:30 - 14:00"
+          }
         ]
       }
     ]
   },
-
   "hobiecat": {
     "label": "Corsi HOBIE CAT 16 (12+ anni)",
     "turni": [
@@ -145,7 +199,9 @@
         "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "16:00 - 17:30"}
+          {
+            "orario": "16:00 - 17:30"
+          }
         ]
       },
       {
@@ -153,15 +209,19 @@
         "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "16:00 - 17:30"}
+          {
+            "orario": "16:00 - 17:30"
+          }
         ]
       },
       {
         "periodo": "Dal 27 al 31 Luglio",
-        "mese": "Luglio / Agosto",
+        "mese": "Luglio",
         "available": true,
         "fasce": [
-          { "orario": "16:00 - 17:30"}
+          {
+            "orario": "16:00 - 17:30"
+          }
         ]
       },
       {
@@ -169,7 +229,9 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "16:00 - 17:30"}
+          {
+            "orario": "16:00 - 17:30"
+          }
         ]
       },
       {
@@ -177,7 +239,9 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "16:00 - 17:30"}
+          {
+            "orario": "16:00 - 17:30"
+          }
         ]
       },
       {
@@ -185,7 +249,9 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "16:00 - 17:30"}
+          {
+            "orario": "16:00 - 17:30"
+          }
         ]
       },
       {
@@ -193,7 +259,9 @@
         "mese": "Agosto",
         "available": true,
         "fasce": [
-          { "orario": "16:00 - 17:30"}
+          {
+            "orario": "16:00 - 17:30"
+          }
         ]
       }
     ]

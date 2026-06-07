@@ -293,9 +293,9 @@
                 reset(settimanaSelect, "Seleziona settimana");
                 const corso = corsiData[corsoSelect.value];
                 if (!corso) return;
-                corso.turni.forEach(turno => {
-                    if (!turno.available)
-                        return;
+                corso.turni
+                    .filter(turno => turno.available === true)
+                    .forEach(turno => {
                     const option = document.createElement("option");
                     option.value = turno.periodo;
                     option.textContent = turno.periodo;

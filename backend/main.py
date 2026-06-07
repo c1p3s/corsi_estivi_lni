@@ -1,11 +1,11 @@
-from flask import Flask, render_template, session, redirect, url_for
+from flask import Flask, render_template, session, redirect, url_for, request, jsonify
 from flask_cors import CORS
 from flask_sock import Sock
 import os 
 import json
 from routes.auth import auth_bp
 from routes.webhook import webhook_bp
-from json_reader import config_host_key, data
+from json_reader import config_host_key, data, COURSES_PATH
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
 sock = Sock(app)
@@ -28,7 +28,9 @@ def orari():
 
 @app.route('/iscrizione', methods=['POST', 'GET'])
 def iscrizione():
-    return render_template('iscrizione.html', corsi = data)
+    with open(COURSES_PATH, "r", encoding="utf-8") as f:
+        corsi = json.load(f)
+    return render_template('iscrizione.html', corsi = corsi)
 
 @app.route('/carpediem', methods=['POST', 'GET'])
 def carpediem():
@@ -38,8 +40,45 @@ def carpediem():
 def console():
     if not session.get('logged_in'):
         return redirect(url_for('carpediem'))
-    return render_template('console.html')
+    
+    from json_reader import COURSES_PATH
+    import json
+    with open(COURSES_PATH, "r", encoding="utf-8") as f:
+        corsi = json.load(f)
+        
+    return render_template('console.html', corsi = corsi)
+
+
+@app.route("/api/update-available", methods=["POST"])
+
+def update_available():
+    try:
+        payload = request.get_json()
+        corso = payload["corso"]
+        index = int(payload["index"])
+        available = bool(payload["available"])
+        with open(COURSES_PATH, "r", encoding="utf-8") as f:
+            corsi = json.load(f)
+
+        corsi[corso]["turni"][index]["available"] = available
+        with open(COURSES_PATH, "w", encoding="utf-8") as f:
+            json.dump(corsi, f, indent=2, ensure_ascii=False)
+
+        return jsonify({
+            "status": "ok",
+            "corso": corso,
+            "index": index,
+            "available": available
+        })
+
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5200))
     app.run(host="localhost", port=port)
+    
+    
