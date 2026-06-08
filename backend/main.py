@@ -14,8 +14,11 @@ CORS(app, resources={r"/api/*"})
 app.register_blueprint(auth_bp)
 app.register_blueprint(webhook_bp)
 app.config['SESSION_COOKIE_HTTPONLY'] = True
-app.config['SESSION_COOKIE_SECURE'] = False  # assicurati che sia False per HTTP
-app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  # oppure 'None' se stai usando domini tipo .ts.net
+if __name__ == "__main__":
+    app.config['SESSION_COOKIE_SECURE'] = False
+else:
+    app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  
 app.secret_key = config_host_key
 
 @app.route('/', methods=['POST', 'GET'])
@@ -50,8 +53,9 @@ def console():
 
 
 @app.route("/api/update-available", methods=["POST"])
-
 def update_available():
+    if not session.get('logged_in'):
+        return jsonify({"error": "Unauthorized"}), 401
     try:
         payload = request.get_json()
         corso = payload["corso"]
