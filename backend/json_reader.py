@@ -19,6 +19,8 @@ try:
         config = json.load(f)
         config_host_key = config.get("host_key")
         config_password = config.get("password")
+        config_google_sheets_secret = config.get("google_sheets_secret")
+        config_google_script_url = config.get("google_script_url")
 except FileNotFoundError as e:
     print(f"Errore: json_reader non trova config.json in: {CONFIG_PATH}")
     raise e

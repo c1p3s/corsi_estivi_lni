@@ -1,17 +1,13 @@
 from flask import Blueprint, request, jsonify, abort
 import requests
 import re
-import os
-import json
+from json_reader import config_google_script_url, config_google_sheets_secret
 
 invia_bp = Blueprint("invia_bp", __name__)
 
-GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwSIX8G0cdxSv_wM8weg-oo1POdjka2Xq_YD2T9b_zXLRZdDxlr6g4yCV01p6Y8CiZE/exec"
+GOOGLE_SCRIPT_URL = config_google_script_url
 
-SECRET_KEY = os.getenv(
-    "GOOGLE_SHEETS_SECRET",
-    "67uyvfhvjbip9kj8h7btgyhbu7"
-)
+SECRET_KEY = config_google_sheets_secret
 
 ALLOWED_FIELDS = {
     "nome",
