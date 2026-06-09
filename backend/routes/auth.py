@@ -1,5 +1,5 @@
 from flask import Blueprint, request, redirect, url_for, render_template, session
-from backend.json_reader import config_password
+from json_reader import config_password
 
 auth_bp = Blueprint("auth_bp", __name__)
         
