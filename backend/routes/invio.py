@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, abort
 import requests
 import re
-from backend.json_reader import config_google_script_url, config_google_sheets_secret
+from json_reader import config_google_script_url, config_google_sheets_secret
 
 invia_bp = Blueprint("invia_bp", __name__)
 
