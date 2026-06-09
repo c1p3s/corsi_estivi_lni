@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="form-pane">
-                    <form id="iscrizioneForm" action="https://script.google.com/macros/s/AKfycbwagwI9HETqwySKR0-jvoBwKUrB19PJI0p-iFplCdEpG4LrHdKzpK38jxAsXP9d6qhf/exec" method="POST">
+                    <form id="iscrizioneForm" action="/api/invio" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Nome Allievo</label>
@@ -186,7 +186,7 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Tipo documento</label>
-                                    <select name="tipo_doc" id="tipoDoc" required>
+                                    <select name="tipo_doc" id="tipo_doc" required>
                                         <option value="">Seleziona</option>
                                         <option value="Carta d'identità">Carta d'identità</option>
                                         <option value="Patente">Patente</option>
@@ -195,17 +195,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Numero documento</label>
-                                    <input type="text" name="num_doc" id="numDoc" required>
+                                    <input type="text" name="num_doc" id="num_doc" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Luogo di rilascio</label>
-                                    <input type="text" name="luogo_rilascio_doc" id="luogoDoc" required>
+                                    <input type="text" name="luogo_rilascio_doc" id="luogo_rilascio_doc" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Data di rilascio</label>
-                                    <input type="date" name="data_rilascio_doc" id="dataDoc" required>
+                                    <input type="date" name="data_rilascio_doc" id="data_rilascio_doc" required>
                                 </div>
                             </div>
                         </div>
@@ -269,17 +269,25 @@
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'text/plain'
+                    'Content-Type': 'application/json'
                 }
             })
             .then(response => {
+                return response.json().then(body => {
+                    if (!response.ok || body.success === false) {
+                        throw new Error(body.message || "Errore durante l'invio.");
+                    }
+                    return body;
+                });
+            })
+            .then(() => {
                 status.innerHTML = "Grazie! La tua richiesta è stata inviata correttamente.";
                 form.reset();
                 tutoreSection.style.display = "none";
                 aggiornaTutore(); // Sincronizza i campi dopo il reset
             })
             .catch(error => {
-                status.innerHTML = "Si è verificato un errore durante l'invio. Riprova.";
+                status.innerHTML = error.message || "Si è verificato un errore durante l'invio. Riprova.";
                 console.error(error);
             });
         });
