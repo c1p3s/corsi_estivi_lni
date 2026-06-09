@@ -3,10 +3,10 @@ from flask_cors import CORS
 from flask_sock import Sock
 import os 
 import json
-from routes.auth import auth_bp
-from routes.webhook import webhook_bp
-from routes.invio import invia_bp
-from json_reader import config_host_key, data, COURSES_PATH
+from backend.routes.auth import auth_bp
+from backend.routes.webhook import webhook_bp
+from backend.routes.invio import invia_bp
+from backend.json_reader import config_host_key, data, COURSES_PATH
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
 sock = Sock(app)
