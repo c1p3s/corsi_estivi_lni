@@ -1170,3 +1170,83 @@ footer {
     width: auto;
     object-fit: contain;
 }
+
+/* ===== PAGINA ERRORE ===== */
+
+.error-page {
+    min-height: calc(100vh - 250px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.error-card {
+    max-width: 750px;
+    width: 100%;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-top: 5px solid var(--laser-red);
+}
+
+.error-logo {
+    width: 110px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.error-code {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--laser-red);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.error-title {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.error-text {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 550px;
+    margin: 0 auto 35px auto;
+}
+
+.error-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+
+    .error-card {
+        padding: 35px 25px;
+    }
+
+    .error-code {
+        font-size: 4rem;
+    }
+
+    .error-title {
+        font-size: 1.6rem;
+    }
+
+    .error-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .error-buttons .cta-button {
+        width: 100%;
+        max-width: 280px;
+    }
+}

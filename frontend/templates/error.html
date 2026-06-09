@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errore 500 - LNI Matera Magna Grecia</title>
+
+```
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+<body>
+
+```
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ url_for('index') }}" class="nav-logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}"
+                 alt="Logo LNI"
+                 class="nav-logo-img">
+            LNI Matera Magna Grecia
+        </a>
+
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('orari') }}">Date & Orari</a>
+            <a href="{{ url_for('iscrizione') }}">Iscrizione</a>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTENUTO ERRORE -->
+<main class="container error-page">
+
+    <div class="error-card">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="Logo Lega Navale Italiana"
+             class="error-logo">
+
+        <div class="error-code">
+            500
+        </div>
+
+        <h1 class="error-title">
+            Mare agitato...
+        </h1>
+
+        <p class="error-text">
+            Si è verificato un errore interno del server.
+        </p>
+
+        <p class="error-text">
+            Il nostro equipaggio sta già lavorando per riportare la navigazione
+            sulla giusta rotta. Ti invitiamo a tornare alla home page e riprovare
+            più tardi.
+        </p>
+
+        <div class="error-buttons">
+            <a href="{{ url_for('index') }}" class="cta-button">
+                ⛵ Torna alla Home
+            </a>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="footer-sezione">
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h4>Contatti & Iscrizioni</h4>
+            <p>📧 <a href="mailto:matera@leganavale.it" class="mobile-link">Invia una Email</a></p>
+            <p>📞 <a href="tel:+393515810370" class="mobile-link">Chiama in Sezione</a></p>
+            <p>📍 Base: Riva dei Tessali - Borgo Pineto</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Seguici sui Social</h4>
+            <p>📸 <a href="https://instagram.com/lni_matera_magnagrecia" target="_blank" class="mobile-link">Instagram</a></p>
+            <p>👥 <a href="https://www.facebook.com/LegaNavaleItalianaSezioneMateraMagnaGrecia" target="_blank" class="mobile-link">Facebook</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Lega Navale Italiana - Matera Magna Grecia. Tutti i diritti riservati.</p>
+    </div>
+</footer>
+```
+
+</body>
+</html>

@@ -24,6 +24,14 @@ else:
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  
 app.secret_key = config_host_key
 
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('error.html'), 500
+
+@app.errorhandler(404)
+def not_found_error(e):
+    return render_template('error.html'), 404
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
     return render_template('index.html')
