@@ -5,6 +5,7 @@ import os
 import json
 from routes.auth import auth_bp
 from routes.webhook import webhook_bp
+from routes.invio import invia_bp
 from json_reader import config_host_key, data, COURSES_PATH
 
 app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
@@ -13,6 +14,9 @@ sock = Sock(app)
 CORS(app, resources={r"/api/*"})
 app.register_blueprint(auth_bp)
 app.register_blueprint(webhook_bp)
+app.register_blueprint(invia_bp)
+app.register_error_handler(404, render_template('orari.html'), 404)
+app.register_error_handler(500, render_template('orari.html'), 500)
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 if __name__ == "__main__":
     app.config['SESSION_COOKIE_SECURE'] = False
