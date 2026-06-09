@@ -1,7 +1,7 @@
 from flask import Blueprint, request, abort
 import subprocess
 import os
-from json_reader import config_password 
+from backend.json_reader import config_password 
 webhook_bp = Blueprint("webhook_bp", __name__)
 
 @webhook_bp.route('/update', methods=['POST'])
